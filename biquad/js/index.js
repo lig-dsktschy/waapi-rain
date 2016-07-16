@@ -32,6 +32,7 @@
     };
     setBiquadFilterType = function() {
         var text = elBiquadFilterType.options[elBiquadFilterType.selectedIndex].text;
+        gain.disconnect();
         biquadFilter.disconnect();
         if (text === 'off') {
             elBiquadFilterFrequencyContainer.classList.add('is-hidden');
