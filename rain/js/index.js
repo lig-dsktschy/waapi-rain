@@ -25,6 +25,8 @@
     gain = ctx.createGain();
     biquadFilter = ctx.createBiquadFilter();
 
+    // 中間処理を表すAudioNodeが持つAudioParamに
+    // input要素の値を代入。表示にも値を反映する
     setGain = function() {
         gain.gain.value = elGainValue.innerText = elGain.value;
     };
@@ -47,9 +49,9 @@
     setGain();
     setBiquadFilterFrequency();
 
-    // 音源を中間処理（音量調整処理）に接続
+    // 音源を表すAudioNodeを、中間処理（音量調整処理）を表すAudioNodeに接続
     mediaElementSource.connect(gain);
-    // 中間処理から最終出力に接続
+    // 中間処理を表すAudioNodeを、最終出力を表すAudioNodeに接続
     gain.connect(ctx.destination);
 
     // DOMへのイベント登録
