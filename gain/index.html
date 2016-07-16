@@ -8,13 +8,15 @@
     <link href="css/index.css" rel="stylesheet">
 </head>
 <body>
-    <audio src="media/rain.mp3" id="audio" preload="auto" loop></audio>
-    <div>
-        <p>Gain</p>
-        <input id="gain" class="range" type="range" min="0" max="1" step="0.01" value="1">
-        <span id="gain-value"></span>
+    <div id="wrapper">
+        <audio src="media/rain.mp3" id="audio" preload="auto" loop></audio>
+        <div>
+            <p>Gain</p>
+            <input id="gain" class="range" type="range" min="0" max="1" step="0.01" value="1">
+            <span id="gain-value"></span>
+        </div>
+        <button id="button">Play / Stop</button>
     </div>
-    <button id="button">Play / Stop</button>
     <script type="text/javascript" src="js/index.js"></script>
 </body>
 </html>

@@ -8,26 +8,28 @@
     <link href="css/index.css" rel="stylesheet">
 </head>
 <body>
-    <audio src="media/rain.mp3" id="audio" preload="auto" loop></audio>
-    <div>
-        <p>Gain</p>
-        <input id="gain" class="range" type="range" min="0" max="1" step="0.01" value="1">
-        <span id="gain-value"></span>
+    <div id="wrapper">
+        <audio src="media/rain.mp3" id="audio" preload="auto" loop></audio>
+        <div>
+            <p>Gain</p>
+            <input id="gain" class="range" type="range" min="0" max="1" step="0.01" value="1">
+            <span id="gain-value"></span>
+        </div>
+        <div>
+            <p>Biquad Filter Type</p>
+            <select id="biquad-filter-type">
+                <option>off</option>
+                <option>lowpass</option>
+                <option>highpass</option>
+            </select>
+        </div>
+        <div id="biquad-filter-frequency-container" class="is-hidden">
+            <p>Biquad Filter Frequency</p>
+            <input id="biquad-filter-frequency" class="range" type="range" min="10" max="22050" step="1" value="5000">
+            <span id="biquad-filter-frequency-value"></span>Hz
+        </div>
+        <button id="button">Play / Stop</button>
     </div>
-    <div>
-        <p>Biquad Filter Type</p>
-        <select id="biquad-filter-type">
-            <option>off</option>
-            <option>lowpass</option>
-            <option>highpass</option>
-        </select>
-    </div>
-    <div id="biquad-filter-frequency-container" class="is-hidden">
-        <p>Biquad Filter Frequency</p>
-        <input id="biquad-filter-frequency" class="range" type="range" min="10" max="22050" step="1" value="5000">
-        <span id="biquad-filter-frequency-value"></span>Hz
-    </div>
-    <button id="button">Play / Stop</button>
     <script type="text/javascript" src="js/index.js"></script>
 </body>
 </html>
