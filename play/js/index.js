@@ -2,7 +2,7 @@
     'use strict';
 
     var
-        elAudio, elButton, ctx, mediaElementSource, isSP, isPlaying;
+        elAudio, elButton, ctx, mediaElementSource, isPlaying;
 
     elAudio  = document.getElementById('audio');
     elButton = document.getElementById('button');
@@ -18,7 +18,7 @@
     mediaElementSource.connect(ctx.destination);
 
     // DOMへのイベント登録
-    elButton.addEventListener(isSP ? 'touchstart' : 'click', function() {
+    elButton.addEventListener('click', function() {
         elAudio[!isPlaying ? 'play' : 'pause']();
         isPlaying = !isPlaying;
     });

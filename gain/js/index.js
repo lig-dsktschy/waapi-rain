@@ -3,7 +3,7 @@
 
     var
         elAudio, elButton, elGain, elGainValue, setGain,
-        ctx, gain, mediaElementSource, isSP, isPlaying;
+        ctx, gain, mediaElementSource, isPlaying;
 
     elAudio     = document.getElementById('audio');
     elButton    = document.getElementById('button');
@@ -31,9 +31,9 @@
     gain.connect(ctx.destination);
 
     // DOMへのイベント登録
-    elButton.addEventListener(isSP ? 'touchstart' : 'click', function() {
+    elButton.addEventListener('click', function() {
         elAudio[!isPlaying ? 'play' : 'pause']();
         isPlaying = !isPlaying;
     });
-    elGain.addEventListener(isSP ? 'touchend' : 'mouseup', setGain);
+    elGain.addEventListener('mouseup', setGain);
 })();

@@ -5,7 +5,7 @@
         elAudio, elButton, elGain, elBiquadFilterType, elBiquadFilterFrequency,
         elGainValue, elBiquadFilterFrequencyValue, elBiquadFilterFrequencyContainer,
         setGain, setBiquadFilterType, setBiquadFilterFrequency, ctx, gain,
-        biquadFilter, mediaElementSource, isSP, isPlaying;
+        biquadFilter, mediaElementSource, isPlaying;
 
     elAudio                          = document.getElementById('audio');
     elButton                         = document.getElementById('button');
@@ -56,11 +56,11 @@
     gain.connect(ctx.destination);
 
     // DOMへのイベント登録
-    elButton.addEventListener(isSP ? 'touchstart' : 'click', function() {
+    elButton.addEventListener('click', function() {
         elAudio[!isPlaying ? 'play' : 'pause']();
         isPlaying = !isPlaying;
     });
-    elGain.addEventListener(isSP ? 'touchend' : 'mouseup', setGain);
+    elGain.addEventListener('mouseup', setGain);
     elBiquadFilterType.addEventListener('change', setBiquadFilterType);
-    elBiquadFilterFrequency.addEventListener(isSP ? 'touchend' : 'mouseup', setBiquadFilterFrequency);
+    elBiquadFilterFrequency.addEventListener('mouseup', setBiquadFilterFrequency);
 })();
